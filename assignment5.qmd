@@ -10,7 +10,6 @@ You may work in pairs or individually for this assignment. Make sure you join a 
 **Repository: <https://github.com/sarahglidden97/Assignment-5.git>**
 
 ```{r}
-#| eval: false
 library(censusapi)
 library(tidyverse)
 library(magrittr)
@@ -28,7 +27,6 @@ https://api.census.gov/data/key_signup.html
 ```{r}
 cs_key <- read_rtf("~/Desktop/SURV 727/sg_key.rtf")
 
-#| eval: false
 acs_il_c <- getCensus(name = "acs/acs5",
                     vintage = 2016,
                     vars = c("NAME", 
@@ -48,7 +46,6 @@ head(acs_il_c)
 Pull map data for Illinois into a data frame.
 
 ```{r}
-#| eval: false
 il_map <- map_data("county", region = "illinois")
 head(il_map)
 ```
@@ -58,7 +55,6 @@ Join the ACS data with the map data. Not that `il_map` has a column `subregion` 
 After you do this, plot a map of Illinois with Counties colored by per capita income.
 
 ```{r}
-#| eval: false
 # first write code to remove "County, Illinois" from NAME
 words_to_remove <- c("County, Illinois", ".")
 
@@ -129,7 +125,6 @@ ggplot() +
 For the next section we need ACS data on a census tract level. We use the same variables as before.
 
 ```{r}
-#| eval: false
 acs_il_t <- getCensus(name = "acs/acs5",
                     vintage = 2016,
                     vars = c("NAME", 
